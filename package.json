@@ -1,0 +1,35 @@
+{
+  "name": "make_your_burger",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "backend": "json-server --watch db/db.json"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "flowbite": "^2.3.0",
+    "json-server": "^1.0.0-alpha.23",
+    "primevue": "^3.51.0",
+    "swiper": "^11.1.1",
+    "tw-elements": "^2.0.0",
+    "vue": "^3.0.0",
+    "vue-loader": "^17.4.2",
+    "vue-router": "^4.0.0-0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-router": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
+    "@vue/compiler-sfc": "^3.0.0",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
