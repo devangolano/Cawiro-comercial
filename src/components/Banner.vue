@@ -1,7 +1,7 @@
 <template>
   <div id="indicators-carousel" class="relative w-full" data-carousel="static">
     <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg md:min-h-[650px]">
+    <div class="relative h-56 overflow-hidden rounded-lg md:min-h-[450px]">
       <!-- Slides -->
       <div v-for="(slide, index) in slides" :key="index"
         :class="{ 'block': index === currentSlide, 'hidden': index !== currentSlide }"

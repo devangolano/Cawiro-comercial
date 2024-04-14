@@ -1,10 +1,10 @@
 <template>
   <div>
     <nav class="bg-gray-900 border-gray-200 dark:bg-gray-900">
-      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
         <router-link to="/">
           <a href="#" class="flex rounded-full justify-center items-center">
-            <img :src="logo" :alt="alt" class="md:h-24 h-20" />
+            <img :src="logo" :alt="alt" class="md:h-20 h-16" />
           </a>
         </router-link>
         <div class="gap-4">
