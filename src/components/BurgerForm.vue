@@ -3,41 +3,40 @@
     <h1 class="flex items-center justify-center font-bold p-3 text-3xl">Hambúrgeria Cwr</h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border p-4 shadow-lg rounded-lg gap-6">
       <!-- CARD 1 -->
-      <div class="rounded overflow-hidden  shadow-xl flex flex-col">
-        <div class="relative"><a href="#">
-            <img class="w-full hover:scale-110 duration-200" src="/hamb/hamb-1.png" alt="Sunset in the mountains">
+      <div class="rounded overflow-hidden shadow-xl flex flex-col">
+        <div class="relative">
+          <a href="#">
+            <img class="w-full hover:scale-110 duration-200" src="/hamb/hamb-1.png" alt="Hambúrguer Cawiro">
             <div
               class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
             </div>
           </a>
-          <a href="#!">
-          </a>
         </div>
         <div class="px-6 py-4 mb-auto">
-          <a href="#" class="font-bold text-md ease-in-out inline-block mb-1">Hambúrger
-            Cawiro</a>
+          <a href="#" class="font-bold text-md ease-in-out inline-block mb-1">Hambúrger Cawiro</a>
           <p class="text-gray-700 text-sm">
             Delicie-se com o <span class="font-semibold">Hambúrger Cawiro:</span> Pão da casa, molho de doce, salada,
             queijo muçarela e carne deliciosa.
           </p>
         </div>
         <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
-          <span class="font-bold text-lg">1.500kz</span>
-          <button class="bg-green-500 px-2 py-1 text-white font-semibold rounded-md">Encomendar</button>
+          <div>
+            <span class="font-bold text-lg">1500</span><span>kz</span>
+          </div>
+          <button
+            @click="encomendarBtn('Hambúrger Cawiro', 'Delicie-se com o Hambúrger Cawiro: Pão da casa, molho de doce, salada, queijo muçarela e carne deliciosa.', 1500)"
+            class="bg-green-500 px-2 py-1 text-white font-semibold rounded-md">Encomendar</button>
         </div>
       </div>
 
-
-
       <!-- CARD 2 -->
       <div class="rounded overflow-hidden shadow-lg flex flex-col">
-        <a href="#"></a>
-        <div class="relative"><a href="#">
-            <img class="w-full" src="/hamb/hamb-2.png" alt="Sunset in the mountains">
+        <div class="relative">
+          <a href="#">
+            <img class="w-full" src="/hamb/hamb-2.png" alt="Hambúrguer da Médio">
             <div
               class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
             </div>
-          </a><a href="#!">
           </a>
         </div>
         <div class="px-6 py-4 mb-auto">
@@ -55,17 +54,14 @@
         </div>
       </div>
 
-
-
       <!-- CARD 3 -->
       <div class="rounded overflow-hidden shadow-lg flex flex-col">
-        <a href="#"></a>
-        <div class="relative"><a href="#">
-            <img class="w-full" src="/hamb/hamb-3.png" alt="Sunset in the mountains">
+        <div class="relative">
+          <a href="#">
+            <img class="w-full" src="/hamb/hamb-3.png" alt="Big Hambúrger">
             <div
               class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
             </div>
-          </a><a href="#!">
           </a>
         </div>
         <div class="px-6 py-4 mb-auto">
@@ -79,10 +75,32 @@
         </div>
         <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
           <span class="font-bold text-lg">4.500kz</span>
-          <button class="bg-green-500 px-2 py-1 text-white font-semibold rounded-md">Encomendar</button>
+          <button
+            @click="encomendarBtn('Big Hambúrger', 'Delicie-se com o Hambúrger Big: Pão da casa, molho especial, salada, queijo muçarela, fiâmbre, ovo Gasosa-x1 e carne deliciosa-x2.', 4500)"
+            class="bg-green-500 px-2 py-1 text-white font-semibold rounded-md">Encomendar</button>
         </div>
       </div>
     </div>
-
   </div>
 </template>
+
+<script setup>
+import { ref, defineProps, defineEmits } from 'vue';
+
+const props = defineProps(['selecao']);
+
+const nomeHamburger = ref('');
+
+const emit = defineEmits(['novo-hamburger']);
+
+function encomendarBtn(nome, descricao, preco) {
+  const selecao = {
+    'nome': nome,
+    'descricao': descricao,
+    'preco': preco
+  };
+
+  // Emitir evento com os dados do hambúrguer
+  emit('novo-hamburger', selecao);
+}
+</script>

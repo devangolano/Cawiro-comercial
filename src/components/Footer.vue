@@ -1,10 +1,6 @@
 <template>
   <footer
     class="bottom-0 left-0 z-20 w-full p-4 bg-[#1f2937] border-t border-gray-200 shadow md:flex md:items-center md:justify-around md:p-6 dark:bg-gray-800 dark:border-gray-600">
-    <span class="text-sm flex flex-col justify-center items-center md:block text-white sm:text-center dark:text-white">©
-      2024 <a href="#" class="hover:underline">Cawiro
-        (SU)™</a> Todos os direitos Reservados.
-    </span>
     <ul
       class="font-medium flex  justify-around px-4 md:px-0 mt-2  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 ">
       <li>
@@ -22,6 +18,9 @@
             to="/Servicos">Serviços</router-link></a>
       </li>
     </ul>
+    <span class="text-sm flex flex-col justify-center items-center md:block text-white sm:text-center dark:text-white">
+      <a href="#" class="hover:underline">© 2024 Cawiro (SU)™</a> Todos os direitos Reservados.
+    </span>
   </footer>
 
 </template>

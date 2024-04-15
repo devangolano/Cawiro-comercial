@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav class="bg-gray-900 border-gray-200 dark:bg-gray-900">
-      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4">
         <router-link to="/">
           <a href="#" class="flex rounded-full justify-center items-center">
             <img :src="logo" :alt="alt" class="md:h-20 h-16" />
@@ -74,15 +74,26 @@
       </div>
     </nav>
     <div :class="{ 'block': checkout, 'hidden': !checkout }"
-      class=" bg-black/70 w-full h-full flex fixed top-0 left-0 z-[99] items-center justify-center">
+      class="bg-black/70 w-full h-full flex fixed top-0 left-0 z-[99] items-center justify-center">
       <div class="bg-white p-5 rounded-md min-w-[90%]  md:min-w-[600px]">
-        <h2 class="flex items-center justify-center font-bold text-2xl">Meus Pedidos</h2>
-        <div id="cart-items" class="flex justify-between mb-2 flex-col"></div>
+        <h2 class="flex items-center justify-center font-bold mb-4 text-2xl">Meus Pedidos</h2>
+        <div id="cart-items" class="flex justify-between mb-2 flex-col">
+          <!-- Aqui você itera sobre os itens da seleção -->
+          <div id="cart-items" class="flex justify-between mb-2 flex-col">
+            <ul>
+              <li class="space-y-1" v-for="item in selecao" :key="item.id">
+                <p><span class="font-bold">Nome:</span> {{ item.nome }}</p>
+                <p><span class="font-bold">Preço:</span> {{ item.preco }}kz</p>
+                <p><span class="font-bold">Descrição:</span> {{ item.descricao }}</p>
+              </li>
+            </ul>
+          </div>
+        </div>
         <p class="font-bold ">Total: <span class="cart-total">0.00kz</span></p>
         <p class="font-bold mt-4">Endereço de entrega:</p>
         <input type="text" placeholder="Endereço que vai receber..." id="endereco"
           class="w-full border-2 p-2 rounded my-1">
-        <p class="text-red-500 hidden" id="endereco-errado">Digite seu emndereço completo</p>
+        <p class="text-red-500 hidden" id="endereco-errado">Digite seu endereço completo</p>
         <div class="flex items-center justify-between py-3">
           <button @click="openCheckout"
             class="bg-red-500 px-2 py-1 text-white cursor-pointer font-semibold rounded-md">Cancelar</button>
@@ -95,10 +106,9 @@
 </template>
 
 <script>
-import { ref } from 'vue';
 export default {
   name: "Navbar",
-  props: ["logo", "alt"],
+  props: ["logo", "alt", "selecao"],
   data() {
     return {
       isMenuOpen: false,
@@ -110,16 +120,18 @@ export default {
       this.isMenuOpen = !this.isMenuOpen;
     },
     openCheckout() {
-      this.checkout = !this.checkout
-
+      this.checkout = !this.checkout;
     },
     closeMenu() {
       this.isMenuOpen = false;
+    },
+    adicionarHamburger(novoHamburger) {
+      this.selecao.push(novoHamburger);
     }
   },
   computed: {
     isCartVisible() {
-      return !this.isMenuOpen; // torna a div isCart visível se o menu não estiver aberto
+      return !this.isMenuOpen;
     }
   }
 }

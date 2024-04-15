@@ -1,66 +1,64 @@
 {
-  "ingredientes": {
-    "paes": [
+  "hamburgaria": {
+    "comdidas": [
       {
         "id": 1,
-        "tipo": "Italiano Branco"
+        "nome": "Sopa",
+        "preco": 800
       },
       {
         "id": 2,
-        "tipo": "3 Queijos"
+        "nome": "Choriço Acebolado",
+        "preco": 1500
       },
       {
         "id": 3,
-        "tipo": "Parmesão e Orégano"
-      },
-      {
-        "id": 4,
-        "tipo": "Integral"
+        "nome": "Magoga",
+        "preco": 700
       }
     ],
-    "carnes": [
+    "bebidas": [
       {
         "id": 1,
-        "tipo": "Maminha"
+        "nome": "Cuca",
+        "preco":"250"
       },
       {
         "id": 2,
-        "tipo": "Alcatra"
+        "nome": "Eka",
+        "preco":"250"
       },
       {
         "id": 3,
-        "tipo": "Picanha"
+        "nome": "Nocal",
+        "preco":"250"
       },
       {
         "id": 4,
-        "tipo": "Veggie burger"
+        "nome": "Booster",
+        "preco":"250"
       }
     ],
-    "opcionais": [
+    "hamburges": [
       {
         "id": 1,
-        "tipo": "Bacon"
+        "nome": "Hambúrguer cawiro",
+        "preco": "1500",
+        "descricao": "Delicie-se com o Hambúrger Cawiro: Pão da casa, molho de doce, salada, queijo muçarela e carne deliciosa."
       },
       {
-        "id": 2,
-        "tipo": "Cheddar"
+        "id": 1,
+        "nome": "Hambúrger da Médio",
+        "preco": "3000",
+        "descricao": "Delicie-se com o Hambúrger Médio: Pão da casa, molho especial, salada, queijo muçarela, fiâmbre, ovo e carne deliciosa."
       },
       {
-        "id": 3,
-        "tipo": "Salame"
-      },
-      {
-        "id": 4,
-        "tipo": "Tomate"
-      },
-      {
-        "id": 4,
-        "tipo": "Cebola roxa"
-      },
-      {
-        "id": 4,
-        "tipo": "Pepino"
+        "id": 1,
+        "nome": "Big Hambúrger",
+        "preco": "4.500kz",
+        "descricao": "Delicie-se com o Hambúrger Big: Pão da casa, molho especial, salada, queijo muçarela, fiâmbre, ovo Gasosa-x1 e carne deliciosa-x2."
       }
+      
     ]
   },
   "status": [
@@ -75,9 +73,13 @@
     {
       "id": "3",
       "tipo": "Finalizado"
+    },
+    {
+      "id": "4",
+      "tipo": "Acaminho"
     }
   ],
-  "burgers": [
+  "pedidos": [
     {
       "nome": "João Coelho",
       "carne": "Maminha",

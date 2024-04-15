@@ -1,19 +1,9 @@
 <template>
   <div>
-    <Banner />
-    <BurgerForm />
+    <h1>.</h1>
   </div>
 </template>
 
-<script>
-import Banner from '../components/Banner'
-import BurgerForm from '../components/BurgerForm'
+<script setup>
 
-export default {
-  name: 'Home',
-  components: {
-    Banner,
-    BurgerForm
-  }
-}
 </script>
